@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container py-lg-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 py-lg-5">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -69,6 +69,7 @@
                             </div>
                         </div>
                     </form>
+                    <div class="py-5"></div> <div class="py-5"></div>
                 </div>
             </div>
         </div>

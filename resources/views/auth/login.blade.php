@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container py-5" >
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-8 py-5">
+            <div class="card ">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -58,16 +58,19 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-primary  btn-xs" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>
                         </div>
                     </form>
+                    <div class="py-5"></div> <div class="py-5"></div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
