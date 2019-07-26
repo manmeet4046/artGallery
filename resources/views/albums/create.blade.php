@@ -24,6 +24,11 @@ input:required:focus:valid {
 <div class="container py-lg-5 ">
 	<div class="row justify-content-center py-5">
 		<div class="col-lg-8 col-md-8">
+      @if (session('failure'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('failure') }}
+                        </div>
+                    @endif
  <form action="{{route('albums/store')}}" method="post" role="form" class="contactForm" enctype="multipart/form-data" data-parsley-validate>
  	@csrf
               <div class="form-group">

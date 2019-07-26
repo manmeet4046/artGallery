@@ -40,7 +40,7 @@
                     @endif
 <div class="py-4">Ablums!</div>
 @can('isAdmin')<a href="albums/create" class="btn-success btn-lg">Add New Album </a> @endcan
-@if(count($albums)>0)
+@if($albums->count()>0)
 
 <div class="grid text-center">
 	@foreach($albums as $album)

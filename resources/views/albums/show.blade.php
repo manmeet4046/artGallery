@@ -33,7 +33,7 @@
                         </div>
                     @endif
 Photos of (<span class="maroon"> {{$album->name}})</span> Album.
-@if(count($album)>0)
+@if($album->count()>0)
 
 <div class="grid">
 	@foreach($album->photos as $photo)

@@ -29,9 +29,9 @@ class AlbumsController extends Controller
 	$filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
 
 	$extension = strtolower($request->file('cover_image')->getClientOriginalExtension());
-	$allowedExtensions =['pdf','jpg'];
+	$allowedExtensions =['pdf','jpg','png','jpeg','gif'];
 	if(!in_array( $extension,$allowedExtensions)){
-		return 'not in';
+		return redirect('/albums/create')->with('failure','Only jpg, jpeg, gif, png and pdf Formats are allowed for this upload.');
 	}
 	$filenameToStore = $filename.'_'.time().'.'.$extension;
 	//Upload Image
