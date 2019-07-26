@@ -46,7 +46,7 @@ class EventsController extends Controller
   
 
 $date = Carbon::createFromFormat('d/M/Y', $request->date);
-    dd($date);
+    //dd($date);
 	//dd($date);
 	$event = new Event;
 	$event->title = $request->title;
