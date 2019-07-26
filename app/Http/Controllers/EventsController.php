@@ -42,7 +42,11 @@ class EventsController extends Controller
 
 	// Create Symlink with Artisan as we don't want client to access this location i,e stroage folder
 	//dd($request->date);
-	$date= Carbon::parse($request->get('datepicker'))->format('Y-m-d H:i:s');
+	//$date= Carbon::parse($request->get('datepicker'))->format('Y-m-d H:i:s');
+  
+
+$date = Carbon::createFromFormat('d/M/Y', $request->date);
+    dd($date);
 	//dd($date);
 	$event = new Event;
 	$event->title = $request->title;

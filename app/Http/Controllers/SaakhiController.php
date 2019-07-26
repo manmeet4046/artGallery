@@ -62,7 +62,8 @@ return Datatables::of($users)->editColumn('date', function ($user)
 
     // Create Symlink with Artisan as we don't want client to access this location i,e stroage folder
     //dd($request->date);
-    $date= Carbon::parse($request->get('datepicker'))->format('Y-m-d H:i:s');
+   // $date= Carbon::parse($request->get('datepicker'))->format('Y-m-d H:i:s');
+    $date = Carbon::createFromFormat('d/M/Y', $request->date);
     //dd($date);
     $saakhi = new Saakhi;
     $saakhi->title = $request->title;
