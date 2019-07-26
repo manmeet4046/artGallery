@@ -47,7 +47,7 @@
 		
 
 			<a href="{{ route('albums.show',$album->id) }}">
-				<img   class="thumbnail" src="../../../../../../storage/album_covers/{{$album->cover_image}}"><br><div class=" details " >{{$album->name}}</div></a>
+				<img   class="thumbnail" src="storage/album_covers/{{$album->cover_image}}"><br><div class=" details " >{{$album->name}}</div></a>
 	
 	
 

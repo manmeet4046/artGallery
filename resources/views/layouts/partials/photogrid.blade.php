@@ -11,6 +11,7 @@
   <div class="portfolio-grid">
       
       <div class="row">  
+        @if($photos->count()>=8)
 @foreach($photos as $photo)
 
     
@@ -35,7 +36,8 @@
 
 
  
-    @endforeach 
+    @endforeach
+    @endif 
         </div>
     
    

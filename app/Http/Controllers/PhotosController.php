@@ -9,7 +9,9 @@ class PhotosController extends Controller
 {
 
     public function index(){
+        
         $photos= Photo::latest()->limit(8)->get();
+
 
     return view('index',compact('photos'));
     }
