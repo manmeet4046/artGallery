@@ -1,11 +1,11 @@
 <section class="portfolio" id="portfolio">
     <div class="container text-center">
       <h2>
-          Gallery
+          {!!__('Gallery')!!}
         </h2>
 
       <p>
-        Latest Photographs of the events
+        {!!__("Latest Photographs of the events")!!}
       </p>
     </div>
   <div class="portfolio-grid">

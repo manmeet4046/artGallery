@@ -90,7 +90,7 @@ position: absolute;
 
 
 <div class="container">
-	<h3 class="mt-5 maroon "><u>{{($url=='pastevents')?'Past Event':(($url=='ongoingevents')?'Ongoing Events':'Upcoming Events')}}:</u> </h3>
+	<h3 class="mt-5 maroon "><u>{{($url=='pastevents')?__('Past Events'):(($url=='ongoingevents')?__('Ongoing Events'):__('Upcoming Events'))}}:</u> </h3>
 	
 	<div class="text-right" style="margin-top: -30px;"><a href="/events/create" class="btn-success btn-sm">Add New Event</a></div>
 	@if (session('success'))
@@ -99,7 +99,7 @@ position: absolute;
                         </div>
      @endif
      @if($url=='pastevents')
-     @if($pastEvents)
+     @if($pastEvents->count()>0)
      @foreach($pastEvents as $event)
   
 	<div class="boxstyle mb-5 mt-5">
@@ -115,6 +115,7 @@ position: absolute;
 	
 	<div class="row justify-content-center"> {{ $pastEvents->links() }}</div>
 	@else
+	<br>
 	<div class="alert alert-danger" role="alert">
                             {{ 'No Event in Database' }}
                         </div><div class="py-5"></div><div class="py-5"></div><div class="py-5"></div>
@@ -140,6 +141,7 @@ position: absolute;
 	@endforeach
 	<div class="row justify-content-center">{{ $upcomingEvents->links() }}</div>
 	@else
+	<br>
 	<div class="alert alert-danger" role="alert">
                             {{ 'No Event in Database' }}
                         </div><div class="py-5"></div><div class="py-5"></div><div class="py-5"></div>
@@ -149,7 +151,7 @@ position: absolute;
 
 <!-- Third Event OnGoing -->
   @if($url=='ongoingevents')
-     @if($ongoingEvents)
+     @if($ongoingEvents->count()>0)
      @foreach($ongoingEvents as $event)
   
 	<div class="boxstyle mb-5 mt-5">
@@ -164,6 +166,7 @@ position: absolute;
 	@endforeach
 	<div class="row justify-content-center">{{ $ongoingEvents->links() }}</div>
 	@else
+	<br>
 	<div class="alert alert-danger" role="alert">
                             {{ 'No Event in Database' }}
                         </div>

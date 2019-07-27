@@ -38,7 +38,7 @@
                             {{ session('success') }}
                         </div>
                     @endif
-<div class="py-4">Ablums!</div>
+<div class="py-4 maroon" style="font-size:20px;"><b>{!!__('Ablums')!!}!</b></div>
 @can('isAdmin')<a href="albums/create" class="btn-success btn-lg">Add New Album </a> @endcan
 @if($albums->count()>0)
 

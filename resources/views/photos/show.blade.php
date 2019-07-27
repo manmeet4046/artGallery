@@ -12,7 +12,7 @@ border: 1px solid #ccc;
 		<div class="col-md-12 text-center py-4">
 <h3>{{$photo->title}}</h3>
   <p>{{$photo->description}}</p>
-   <div class="text-right " style="margin-top:-57px;"> <a href="/albums/{{$photo->album_id}}" class="btn-warning btn-lg">Back to Album</a></div>
+   <div class="text-right " style="margin-top:-57px;"> <a href="/albums/{{$photo->album_id}}" class="btn-warning btn-lg">{!! __('Back to Album')!!}</a></div>
 <hr>
 <img src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}"/>
 <br><br>

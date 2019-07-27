@@ -25,14 +25,14 @@
 </style>
 <div class="container py-4">
 <h3 class="text-center maroon">{{$event->title}}</h3>
-<a class="btn btn-warning btn-sm" href="/events">Go Back</a>
+<a class="btn btn-warning btn-sm" href="/events">{{__('Go Back')}}</a>
 <a class="btn btn-primary btn-sm " href="/events/create">Upload Photo to Album</a><hr>
 @if (session('success'))
                         <div class="alert alert-success" role="alert">
                             {{ session('success') }}
                         </div>
                     @endif
-<h3 class="maroon mb-3 darkmagenta"> Description  of Event.</h3>
+<h3 class="maroon mb-3 darkmagenta"> {{__('Description of the Event')}}.</h3>
 
 <div class="text-justify"> 
 

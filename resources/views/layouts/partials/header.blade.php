@@ -5,7 +5,7 @@
       <div id="logo" class="pull-left">
         <a href="/"><img src="{{ asset('/img/logo.png')}}" alt="" title="" /><span style="color:yellow;font-size: 20px;float:right;
   padding-top: 10px;
-  " >&nbsp; The, Art Gallery</span></img></a>
+  " >&nbsp; {!!__('The, Art Gallery')!!}</span></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Bell</a></h1>-->
       </div>
@@ -48,7 +48,7 @@
                             @endif
                         @else
                             
-                                    Hi, {{ Auth::user()->name }} <span class="caret"></span>
+                                   
                                 
 
                                
@@ -61,20 +61,21 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                    <a style="font-size:16px;color:darkblue;"> Hi, {{ Auth::user()->name }} </a>
+                                
                          
                         @endguest
                        
                         
                         @if(\Session::get('locale')=='hi')
                         
-                        <a href="/locale/en"style="font-size: 16px;color:maroon;background-color: lightyellow;padding: 4px;" ><b>English</b></a>
+                        <a href="/locale/en"style="font-size: 16px;color:maroon;background-color: lightyellow;padding: 4px;border-radius: 5px;" ><b>English</b></a>
                         @elseif(\Session::get('locale')=='en')
-                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;"><b>हिंदी</b></a>
+                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;border-radius: 5px;"><b>हिंदी</b></a>
                          @else
-                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;">हिंदी</a>
+                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;border-radius: 5px;">हिंदी</a>
                          @endif 
                     
       </nav>
-    </div>
+   </div>
   </header>

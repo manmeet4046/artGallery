@@ -90,7 +90,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/fonts/font-awesome.css')}}">
 <div class="container py-4">
 <h3 class="text-center maroon">{{$saakhi->title}}</h3>
-<a class="btn btn-warning btn-sm" href="/saakhi">Go Back</a>
+<a class="btn btn-warning btn-sm" href="/saakhi">{{__('Go Back')}}</a>
 @can('isAdmin')<a class="btn btn-primary btn-sm " href="/saakhi/create">Upload New Saakhi Issue</a> @endcan<hr>
 @if (session('success'))
                         <div class="alert alert-success" role="alert">
@@ -116,7 +116,7 @@
 
 	<br><br>
 <hr style=" height: 1px;border-bottom: 1px solid red" >
-	<h3 class="maroon" id="cTarget">Comments:</h3>
+	<h3 class="maroon" id="cTarget">{{__('Comments')}}:</h3>
   @if (session('comment'))
                         <div class="alert alert-success" role="alert">
                             {{ session('comment') }}
@@ -127,7 +127,7 @@
 <form action="{{route('comments.store')}}" method="post" >
                   @csrf
       <div class="form-group">
-        <label for="comment">Your Comment</label>
+        <label for="comment">{{__('Your Comment')}}</label>
         <textarea name="comment" class="form-control" rows="3" required=""></textarea>
         @if ($errors->has('comment'))
                                     <span class="help-block red">
@@ -138,7 +138,7 @@
       <input type="hidden" value="{{$saakhi->id}}"name="saakhi_id">
       <input type="hidden" value="0"name="comment_id">
 
-      <div class="row justify-content-end"><button type="submit" class=" btn btn-success btn-sm" style="margin-right:20px;" {{(Auth::check())?'':'disabled'}}> {{(Auth::check())?'Send':'Login to Comment'}} </button></div>
+      <div class="row justify-content-end"><button type="submit" class=" btn btn-success btn-sm" style="margin-right:20px;" {{(Auth::check())?'':'disabled'}}> {{(Auth::check())?__('Send'):__('Login to Comment')}} </button></div>
     </form>
 <div class="comments-nav">
       <ul class="nav nav-pills">

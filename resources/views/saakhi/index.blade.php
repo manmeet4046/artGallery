@@ -9,7 +9,7 @@
                             {{ session('success') }}
                         </div>
      @endif
-<h3 class="text-center">List of Published Saakhi Parrika</h3>
+<h3 class="text-center">{{__('List of Published Saakhi Patrika')}}</h3>
 	@can('isAdmin')<h3 class="text-center"><a href='saakhi/create' class=" btn-success btn-sm">Add New Saakhi</a></h3>@endcan
 
 <div class=" table-responsive">
@@ -17,12 +17,12 @@
 		
 		<thead>
 			<tr>
-				<th width="20%">Title</th>
-				  <th>Publisher</th>
-				  <th>Volume</th>
-				  <th>Issue</th> 
-				  <th>Date</th>
-				  <th width="10%">Action</th>
+				<th width="20%">{{__('Title')}}</th>
+				  <th>{{__('Publisher')}}</th>
+				  <th>{{__('Volume')}}</th>
+				  <th>{{__('Issue')}}</th> 
+				  <th>{{__('Date')}}</th>
+				  <th width="10%">{{__('Action')}}</th>
 				  
 				
 

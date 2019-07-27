@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2 class="section-title">Contact Us</h2>
+          <h2 class="section-title">{!! __('Contact Us')!!}</h2>
         </div>
       </div>
 
@@ -48,7 +48,7 @@
                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validation"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">{!!__('Send Message')!!}</button></div>
             </form>
           </div>
         </div>

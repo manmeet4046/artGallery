@@ -1,7 +1,7 @@
 <section class="team" id="team">
     <div class="container">
       <h2 class="text-center">
-          Meet our team
+          {!! __('Meet our Team')!!}
         </h2>
 
       <div class="row">

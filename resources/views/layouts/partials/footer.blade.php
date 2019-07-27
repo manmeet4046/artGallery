@@ -5,7 +5,7 @@
 
           <div class="col-lg-6 col-xs-12 text-lg-left text-center">
             <p class="copyright-text">
-              © Sagicious WebSolutions!
+              © {!!__('Sagicious WebSolutions!') !!}}
             </p>
             <div class="credits">
               <!--
