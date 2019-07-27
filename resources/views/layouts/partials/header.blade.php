@@ -68,11 +68,11 @@
                         
                         @if(\Session::get('locale')=='hi')
                         
-                        <a href="/locale/en"style="font-size: 16px;" >English</a>
+                        <a href="/locale/en"style="font-size: 16px;color:maroon;background-color: lightyellow;padding: 4px;" ><b>English</b></a>
                         @elseif(\Session::get('locale')=='en')
-                         <a href="/locale/hi" style="font-size: 16px;">हिंदी</a>
+                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;"><b>हिंदी</b></a>
                          @else
-                         <a href="/locale/hi" style="font-size: 16px;">हिंदी</a>
+                         <a href="/locale/hi" style="font-size: 18px;color:maroon;background-color: lightyellow;padding: 2px;">हिंदी</a>
                          @endif 
                     
       </nav>

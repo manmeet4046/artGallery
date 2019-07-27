@@ -21,6 +21,16 @@ Route::get('locale/{locale}', function($locale){
 	return redirect()->back();
 });
 
+/*Route::get('test',function($key=''){
+
+	$row =['ma'=>"k",'hh'=>'j'];
+
+	$row +=[$key=>'a'];
+	
+	
+	
+	return json_encode($row,JSON_PRETTY_PRINT);
+});*/
 
 Auth::routes();
 
