@@ -12,22 +12,22 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="/#about">About Us</a></li>
-          <li><a href="/#features">History</a></li>
-          <li><a href="/saakhi">Saakhi</a></li>
-          <li><a href="/albums">Gallery</a></li>
-          <li class=""><a href="">Events</a>
+          <li><a href="/#about" style="font-size:16px;">{!! __('About Us')!!}</a></li>
+          <li><a href="/#features" style="font-size:16px;">{!!__('History')!!}</a></li>
+          <li><a href="/saakhi" style="font-size:16px;"> {!! __('Saakhi')!!} </a></li>
+          <li><a href="/albums" style="font-size:16px;">{!! __('Gallery')!!}</a></li>
+          <li class=""><a href="" style="font-size:16px;">{!! __('Events')!!}</a>
             <ul style="margin-top: -10px;">
 
-               <li><a href="/events/ongoingevents">Ongoing Events</a></li>
-              <li><a href="/events/upcomingevents">Upcoming Events</a>
-                 <li><a href="/events/pastevents">Past Events</a></li>
+               <li><a href="/events/ongoingevents">{{__('Ongoing Events')}}</a></li>
+              <li><a href="/events/upcomingevents">{{__('Upcoming Events')}}</a>
+                 <li><a href="/events/pastevents">{{__('Past Events')}}</a></li>
               </li>
              
             </ul>
           </li>
            
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact" style="font-size:16px;">{!!__('Contact Us')!!}</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -39,11 +39,11 @@
                         <!-- Authentication Links -->
                         @guest
                            
-                                <a style="font-size:16px;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a style="font-size:16px;" href="{{ route('login') }}">{!! __('Login') !!}</a>
                           
                             @if (Route::has('register'))
                               
-                                    <a style="font-size:16px;" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a style="font-size:16px;" href="{{ route('register') }}">{!!__('Register') !!}</a>
                                
                             @endif
                         @else
@@ -55,7 +55,7 @@
                                     <a style="font-size:16px;" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {!! __('Logout') !!}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -64,6 +64,16 @@
                                 </div>
                          
                         @endguest
+                       
+                        
+                        @if(\Session::get('locale')=='hi')
+                        
+                        <a href="/locale/en"style="font-size: 16px;" >English</a>
+                        @elseif(\Session::get('locale')=='en')
+                         <a href="/locale/hi" style="font-size: 16px;">हिंदी</a>
+                         @else
+                         <a href="/locale/hi" style="font-size: 16px;">हिंदी</a>
+                         @endif 
                     
       </nav>
     </div>

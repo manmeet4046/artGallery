@@ -11,6 +11,7 @@ use Gate;
 use App\Comment;
 class SaakhiController extends Controller
 {
+    
     public function index(){
     
     	return view('saakhi.index');

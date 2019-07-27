@@ -10,18 +10,46 @@
 
       <div class="col-md-12">
         <h1>
-            प्रेमचन्द साहित्य संस्थान
+            {{ __('Premachand Saahity Sansthaan') }}
           </h1>
 
         <p class="tagline">
-          प्रेमचन्द स्मृतिकक्ष के रूप में एक संग्रहालय
+         {{ __('A Commemorative for Premchand')}}  <!-- प्रेमचन्द स्मृतिकक्ष के रूप में एक संग्रहालय -->
         </p>
-        <a class="btn-front " href="#about">Get Started Now</a>
+        <a class="btn-front " href="#about">{{ __('Get Started Now')}}</a>
       </div>
     </div>
 
   </section>
-      @include('layouts.partials.history')
+  
+<section class="features" id="features">
+    <div class="container">
+     
+
+      <div class="row">
+        <div class="feature-col col-lg-12 col-xs-12">
+          <div class="text-center">
+           
+
+            <div>
+              <p class="badge badge-primary" style="font-size:28px;color:white">
+                 एक यात्रा
+                </p>
+<div class="text-justify">{!!__('historypage.text')!!}</div>
+            
+
+            </div>
+          </div>
+        </div>
+
+        
+
+       
+      </div>
+
+      
+    </div>
+  </section>
   <!-- /About -->
   @include('layouts.partials.about')
   <!-- Parallax -->

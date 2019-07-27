@@ -13,7 +13,13 @@ use App\Photo;
 
 Route::get('/', 'PhotosController@index');
 
-
+Route::get('locale/{locale}', function($locale){
+	if(\Session::has('locale')){
+            \App::setLocale(\Session::get('locale'));
+        }
+	Session::put('locale',$locale);
+	return redirect()->back();
+});
 
 
 Auth::routes();
