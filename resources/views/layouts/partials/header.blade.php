@@ -52,16 +52,13 @@
                                 
 
                                
-                                    <a style="font-size:16px;" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {!! __('Logout') !!}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   
+<span class="form-inline" style="display: inline-block;">
+                                   <form id="" action="{{ route('logout') }}" method="POST" class="form-inline">
                                         @csrf
-                                    </form>
-                                    <a style="font-size:16px;color:darkblue;"> Hi, {{ Auth::user()->name }} </a>
+                                        <input type="submit" class=" btn-link btn-xs" value="Logout" style="color:white;border:none;padding:0px">
+                                    </form></span>
+                                   
                                 
                          
                         @endguest
@@ -79,3 +76,4 @@
       </nav>
    </div>
   </header>
+  <span> <a style="font-size:16px;color:darkblue;position: fixed;top:0px;right:20px;"> Hi, {{ Auth::user()->name }} </a></span>
