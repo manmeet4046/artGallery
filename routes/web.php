@@ -32,17 +32,17 @@ Route::get('locale/{locale}', function($locale){
 	return json_encode($row,JSON_PRETTY_PRINT);
 });*/
 
-Auth::routes();
-
+//Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/albums','AlbumsController@index');
-Route::get('/albums/create','AlbumsController@create');
-Route::post('/albums/store','AlbumsController@store')->name('albums/store');
+Route::get('/albums/create','AlbumsController@create')->middleware('verified');
+Route::post('/albums/store','AlbumsController@store')->name('albums/store')->middleware('verified');
 Route::get('/albums/{album}','AlbumsController@show')->name('albums.show');
-Route::get('/photos/create/{id}','PhotosController@create');
-Route::post('/photos/store','PhotosController@store')->name('photos/store');
+Route::get('/photos/create/{id}','PhotosController@create')->middleware('verified');
+Route::post('/photos/store','PhotosController@store')->name('photos/store')->middleware('verified');
 Route::get('/photos/{photo}','PhotosController@show')->name('photos.show');
-Route::post('/photos/delete/{photo}','PhotosController@destroy')->name('photos.delete');
+Route::post('/photos/delete/{photo}','PhotosController@destroy')->name('photos.delete')->middleware('verified');
 
 
 
@@ -50,26 +50,26 @@ Route::post('/photos/delete/{photo}','PhotosController@destroy')->name('photos.d
 Route::get('/events/pastevents','EventsController@index');
 Route::get('/events/ongoingevents','EventsController@index');
 Route::get('/events/upcomingevents','EventsController@index');
-Route::get('/events/create','EventsController@create');
-Route::post('/events/store','EventsController@store')->name('events/store');
+Route::get('/events/create','EventsController@create')->middleware('verified');
+Route::post('/events/store','EventsController@store')->name('events/store')->middleware('verified');
 Route::get('/events/{event}','EventsController@show')->name('events.show');
 
 //For SAAKHI
 Route::get('/saakhi','SaakhiController@index')->name('saakhi');
 
 Route::get('/journals','SaakhiController@getJournals')->name('journals');
-Route::get('/saakhi/create','SaakhiController@create');
-Route::post('/saakhi/store','SaakhiController@store')->name('saakhi/store');
+Route::get('/saakhi/create','SaakhiController@create')->middleware('verified');
+Route::post('/saakhi/store','SaakhiController@store')->name('saakhi/store')->middleware('verified');
 Route::get('/saakhi/{saakhi}','SaakhiController@show')->name('saakhi.show');
-Route::post('/saakhi/delete/{saakhi}','SaakhiController@destroy')->name('saakhi.delete');
+Route::post('/saakhi/delete/{saakhi}','SaakhiController@destroy')->name('saakhi.delete')->middleware('verified');
 
 //Route::get('/comments',function(){
 	//return view('comments.index');
 //});
 Route::get('/commentsonly/{id}','CommentController@index')->name('commentsonly');
-Route::post('/comments/store','CommentController@store')->name('comments.store');;
-Route::get('/comments/create/{saakhi_id}','CommentController@create');
+Route::post('/comments/store','CommentController@store')->name('comments.store')->middleware('verified');;
+Route::get('/comments/create/{saakhi_id}','CommentController@create')->middleware('verified');
 Route::get('/comments/{id}','SaakhiController@comments')->name('comments');
-Route::post('/reply/store','ReplyController@store')->name('reply.store');;
+Route::post('/reply/store','ReplyController@store')->name('reply.store')->middleware('verified');
 
 
