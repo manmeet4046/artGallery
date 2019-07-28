@@ -4,7 +4,7 @@
     <div class="container text-center " style="">
       <div class="row">
         <div class="col-md-12 " style="margin-top:-120px;">
-          <a class="hero-brand" href="index.html" title="Home" ><div style="border:1px solid white;padding: 2px;border-radius:10px;background-color: white;"><img alt="Bell Logo" src="img/logo.png" style="border-radius:15px;" ></div></a>
+          <a class="hero-brand" href="index.html" title="Home" ><div style="border:1px solid white;padding: 2px;border-radius:10px;background-color: white;"><img alt="Bell Logo" src="/img/logo.png" style="border-radius:15px;" ></div></a>
         </div>
       
 
@@ -54,15 +54,13 @@
   @include('layouts.partials.about')
   <!-- Parallax -->
 
-  <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
-    <h2>
-        Welcome to a perfect theme
-      </h2>
+  <div class="bg-primary  text-center " style="height: 50px;" >
+   
 
-    <p>
+    <p class="py-3">
       This is the most powerful theme with thousands of options that you have never seen before.
     </p>
-    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="img/gadgets.png">
+    
   </div>
 
   @include('layouts.partials.photogrid')

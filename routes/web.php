@@ -21,6 +21,8 @@ Route::get('locale/{locale}', function($locale){
 	return redirect()->back();
 });
 
+Route::get('/slideshow/{album}','AlbumsController@slideshow')->name('album.slideshow');
+
 /*Route::get('test',function($key=''){
 
 	$row =['ma'=>"k",'hh'=>'j'];

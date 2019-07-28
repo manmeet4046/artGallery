@@ -16,7 +16,7 @@
  	@csrf
               <div class="form-group">
               	<label for="name" >Name of your Album</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"  required="" pattern="[A-Za-z0-9\ \-\,]+"   data-parsley-pattern-message="Only Alphanumeric and -,spaces are allowed" value="{{old('name')}}" />
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"  required=""  value="{{old('name')}}" maxlength="64" />
              
                @if ($errors->has('name'))
                                     <span class="help-block red">
@@ -26,7 +26,7 @@
               </div>
               <div class="form-group">
               	<label for="name" >Description of Album</label>
-                <input type="text" class="form-control" name="description" id="description" placeholder="Description of Album"  required="" />
+                <input type="text" class="form-control" name="description" id="description" placeholder="Description of Album"  required="" maxlength="64" />
                  @if ($errors->has('description'))
                                     <span class="help-block red">
                                        {{$errors->first('description') }}</

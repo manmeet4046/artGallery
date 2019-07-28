@@ -22,6 +22,14 @@ class PhotosController extends Controller
    	return view('photos.create',compact('album_id'));
    }
 
+   public function slideshow($id){
+
+     $photos =Photo::where('album_id',$id)->get();
+//dd($photos);
+
+    return view('photos.slideshow',compact('photos'));
+   }
+
    public function store(Request $request){
     	$this->validateData();
     	$filenameWithExt = $request->file('photo')->getClientOriginalName();

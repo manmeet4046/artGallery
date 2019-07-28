@@ -31,6 +31,20 @@
     letter-spacing: 1px;
     color: #828282;
     }
+
+.allimgsd {
+    position: relative;
+    top:35px;
+    left:-100px;
+    z-index: 999;
+   margin-top: 20px;
+    padding: 10px;
+    color: #444;
+    background: #F3F2AA;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #828282;
+    }
 </style>
 <div class="container">
 @if (session('success'))
@@ -39,15 +53,15 @@
                         </div>
                     @endif
 <div class="py-4 maroon" style="font-size:20px;"><b>{{__('Ablums')}}!</b></div>
-@can('isAdmin')<a href="albums/create" class="btn-success btn-lg">Add New Album </a> @endcan
+@can('isAdmin')<a href="albums/create" class="btn-success btn-lg">Add New Album </a> @endcan &nbsp; To View Slideshow Click on the album Photo or Click on All images Button to view grid of images @can('isAdmin')(To upload click All images btn)@endcan
 @if($albums->count()>0)
 
 <div class="grid text-center">
 	@foreach($albums as $album)
 		
-
-			<a href="{{route('albums.show',$album->id)}}">
-				<img   class="thumbnail" src="storage/album_covers/{{$album->cover_image}}"><br><div class=" details " >{{$album->name}}</div></a>
+<div><a href="{{route('albums.show',$album->id)}}" class="allimgsd">All Images</a>
+			<a href="{{route('album.slideshow',$album->id)}}">
+				<img   class="thumbnail" src="storage/album_covers/{{$album->cover_image}}"><br><div class=" details " >{{$album->name}}</div></a></div>
 	
 	
 

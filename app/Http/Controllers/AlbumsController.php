@@ -52,7 +52,12 @@ class AlbumsController extends Controller
   	
   	return view('albums.show',compact('album'));
   }
-
+public function slideshow(Album $album){
+   
+    //$album= Album::latest()->limit(8)->get();
+   $albumname = $album->name;
+    return view('photos.slideshow',compact('album','albumname'));
+   }
     protected function validateData(){
     	return request()->validate([
     		'name'=>'required',
