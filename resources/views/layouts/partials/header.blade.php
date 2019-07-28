@@ -59,7 +59,7 @@
                                         <input type="submit" class=" btn-link btn-xs" value="Logout" style="color:white;border:none;padding:0px">
                                     </form></span>
                                    
-                                
+                                <span> <a style="font-size:16px;color:darkblue;position: fixed;top:0px;right:20px;"> Hi, {{ Auth::user()->name }} </a></span>
                          
                         @endguest
                        
@@ -76,4 +76,4 @@
       </nav>
    </div>
   </header>
-  <span> <a style="font-size:16px;color:darkblue;position: fixed;top:0px;right:20px;"> Hi, {{ Auth::user()->name }} </a></span>
+  
