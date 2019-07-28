@@ -3,10 +3,10 @@
 <section class="hero">
     <div class="container text-center " style="">
       <div class="row">
-        <div class="col-md-12">
-          <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="img/logo.png"></a>
+        <div class="col-md-12 " style="margin-top:-120px;">
+          <a class="hero-brand" href="index.html" title="Home" ><div style="border:1px solid white;padding: 2px;border-radius:10px;background-color: white;"><img alt="Bell Logo" src="img/logo.png" style="border-radius:15px;" ></div></a>
         </div>
-      </div>
+      
 
       <div class="col-md-12">
         <h1>
@@ -17,7 +17,7 @@
          {{ __('A Commemorative for Premchand')}}  <!-- प्रेमचन्द स्मृतिकक्ष के रूप में एक संग्रहालय -->
         </p>
         <a class="btn-front " href="#about">{{ __('Get Started Now')}}</a>
-      </div>
+      </div></div>
     </div>
 
   </section>

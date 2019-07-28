@@ -3,7 +3,7 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="/"><img src="{{ asset('/img/logo.png')}}" alt="" title="" /><span style="color:yellow;font-size: 20px;float:right;
+        <a href="/"><img style="border-radius:2px;" src="{{ asset('/img/logo.png')}}" alt="" title="" /><span style="color:yellow;font-size: 20px;float:right;
   padding-top: 10px;
   " >&nbsp; {!!__('The, Art Gallery')!!}</span></a>
         <!-- Uncomment below if you prefer to use a text image -->
