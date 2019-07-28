@@ -57,7 +57,8 @@ No Album
 </div>
 @endsection
 @section('scripts')
- <script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/superfish.js')}}"></script>
+<script src="{{asset('js/sticky.js')}}"></script>
  <script src="{{asset('js/custom.js')}}"></script>
 @endsection

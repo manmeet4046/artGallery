@@ -212,9 +212,11 @@
 
 
 
-</div> <script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset('js/superfish.js')}}"></script>
- <script src="{{asset('js/custom.js')}}"></script>
+</div> 
+
+
+
+
 @endsection
 
 @section('script')
