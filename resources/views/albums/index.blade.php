@@ -38,7 +38,7 @@
                             {{ session('success') }}
                         </div>
                     @endif
-<div class="py-4 maroon" style="font-size:20px;"><b>{!!__('Ablums')!!}!</b></div>
+<div class="py-4 maroon" style="font-size:20px;"><b>{{__('Ablums')}}!</b></div>
 @can('isAdmin')<a href="albums/create" class="btn-success btn-lg">Add New Album </a> @endcan
 @if($albums->count()>0)
 
@@ -46,7 +46,7 @@
 	@foreach($albums as $album)
 		
 
-			<a href="{{ route('albums.show',$album->id) }}">
+			<a href="{{route('albums.show',$album->id)}}">
 				<img   class="thumbnail" src="storage/album_covers/{{$album->cover_image}}"><br><div class=" details " >{{$album->name}}</div></a>
 	
 	

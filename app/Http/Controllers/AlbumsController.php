@@ -31,13 +31,13 @@ class AlbumsController extends Controller
 	$extension = strtolower($request->file('cover_image')->getClientOriginalExtension());
 	$allowedExtensions =['pdf','jpg','png','jpeg','gif'];
 	if(!in_array( $extension,$allowedExtensions)){
-		return redirect('/albums/create')->with('failure','Only jpg, jpeg, gif, png and pdf Formats are allowed for this upload.');
+	return redirect('/albums/create')->with('failure','Only pdf, jpg, png, jpeg formats are allowed!');
+    
 	}
 	$filenameToStore = $filename.'_'.time().'.'.$extension;
 	//Upload Image
 	$location = $request->file('cover_image')->storeAs('public/album_covers/',$filenameToStore);
    
-
 	// Create Symlink with Artisan as we don't want client to access this location i,e stroage folder
 	$albums = new Album;
 	$albums->name = $request->name;

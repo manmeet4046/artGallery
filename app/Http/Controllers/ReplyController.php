@@ -9,7 +9,7 @@ class ReplyController extends Controller
 {
     public function store(Request $request){
     	
-    	dd('fggf');
+    	
          $reply = new Reply;
          $reply->name=Auth()->user()->name;
          $reply->reply=$request->reply;

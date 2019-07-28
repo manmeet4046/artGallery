@@ -5,39 +5,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <style>
-	.post-comments {
-  padding-bottom: 9px;
-  margin: 5px 0 5px;
-}
 
-.comments-nav {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 5px;
-}
-
-.post-comments .comment-meta {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 5px;
-}
-
-.post-comments .media {
-  border-left: 1px dotted #000;
-  border-bottom: 1px dotted #000;
-  margin-bottom: 5px;
-  padding-left: 10px;
-}
-
-.post-comments .media-heading {
-  font-size: 12px;
-  color: grey;
-}
-
-.post-comments .comment-meta a {
-  font-size: 12px;
-  color: grey;
-  font-weight: bolder;
-  margin-right: 5px;
-}
 </style>
 
 

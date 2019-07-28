@@ -2,22 +2,6 @@
 @section('content')
 <style>
 	
-	input:invalid {
-		border-left: solid 12px salmon;
-  border-left-color: salmon;
-}
-input:required:valid {
-	border-left: solid 12px palegreen;
-  border-left-color: palegreen;
-}
-input:required:focus:valid {
-  background: url("{{asset('img/checked.png')}}") no-repeat 99% 50%;
-  background-size: 15px;
-}
- input:focus:invalid {
- /* background: url("{{asset('img/wrong.png')}}") no-repeat 99% 50%;*/
-  background-size: 15px;
-}
 
 
 </style>

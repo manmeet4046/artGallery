@@ -11,8 +11,6 @@ class PhotosController extends Controller
     public function index(){
         
         $photos= Photo::latest()->limit(8)->get();
-
-
     return view('index',compact('photos'));
     }
     
@@ -25,33 +23,23 @@ class PhotosController extends Controller
    }
 
    public function store(Request $request){
-
-
-	$this->validateData();
-
-	$filenameWithExt = $request->file('photo')->getClientOriginalName();
-	//get only file name
-	$filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-	$extension = strtolower($request->file('photo')->getClientOriginalExtension());
-	$allowedExtensions =['pdf','jpg','jpeg'];
-	if(!in_array( $extension,$allowedExtensions)){
-		return 'not in valid extension';
-	}
-	$filenameToStore = $filename.'_'.time().'.'.$extension;
-	//Upload Image
-	$location = $request->file('photo')->storeAs('public/photos/'.$request->album_id,$filenameToStore);
-
-
-	// Create Symlink with Artisan as we don't want client to access this location i,e stroage folder
-	$photo = new Photo;
-	$photo->title = $request->title;
-	$photo->album_id = $request->album_id;
-	$photo->description = $request->description;
-	$photo->size = $request->file('photo')->getClientSize();
-	$photo->photo = $filenameToStore;
-	$photo->save();
-	//Album::create($data);
-	//Personal::create(array_merge( $data ,['user_id'=>Auth::user()->id]));
+    	$this->validateData();
+    	$filenameWithExt = $request->file('photo')->getClientOriginalName();
+    	$filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+    	$extension = strtolower($request->file('photo')->getClientOriginalExtension());
+    	$allowedExtensions =['pdf','jpg','jpeg','png','gif'];
+    	if(!in_array( $extension,$allowedExtensions)){
+    		return 'not in valid extension';
+    	}
+    	$filenameToStore = $filename.'_'.time().'.'.$extension;
+    	$location = $request->file('photo')->storeAs('public/photos/'.$request->album_id,$filenameToStore);
+    	$photo = new Photo;
+    	$photo->title = $request->title;
+    	$photo->album_id = $request->album_id;
+    	$photo->description = $request->description;
+    	$photo->size = $request->file('photo')->getClientSize();
+    	$photo->photo = $filenameToStore;
+    	$photo->save();
 	return redirect('/albums/'.$request->album_id)->with('success','Photo uplaoded');
     }
 

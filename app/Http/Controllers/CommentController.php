@@ -10,8 +10,7 @@ use Auth;
 class CommentController extends Controller
 {
     public function index($id){
-    	// $post = Comment::with('user','saakhi')->findOrFail($id);
-        
+    	// $post = Comment::with('user','saakhi')->findOrFail($id);  
        // dd($post->user->name,$post->comment,$post->saakhi->title);
     }
 
@@ -21,22 +20,17 @@ class CommentController extends Controller
     }
 
     public function store(Request $request){
- //dd($request->comment, Auth()->user()->name,Auth()->user()->id,$saakhi_id);
-    	$request->validate([
-    'comment' => 'required',
-   
-	]);
-    $event = new Comment;
-	$event->comment = $request->comment;
-	$event->name = Auth()->user()->name;
-	$event->user_id=Auth()->user()->id;
-	$event->saakhi_id=$request->saakhi_id;
+    //dd($request->comment, Auth()->user()->name,Auth()->user()->id,$saakhi_id);
+    $request->validate([
+        'comment' => 'required',
+    	]);
 
-	
-
-	
-
-	$event->save();
+        $event = new Comment;
+    	$event->comment = $request->comment;
+    	$event->name = Auth()->user()->name;
+    	$event->user_id=Auth()->user()->id;
+    	$event->saakhi_id=$request->saakhi_id;
+	    $event->save();
 
  	return redirect('/saakhi/'.$request->saakhi_id.'#cTarget')->with('comment','New Comment added Succesfully');
     }

@@ -49,42 +49,30 @@ return Datatables::of($users)->editColumn('date', function ($user)
     public function store(Request $request){
         $this->validateData();
         $filenameWithExt = $request->file('saakhi')->getClientOriginalName();
-    //get only file name
-    $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-    $extension = strtolower($request->file('saakhi')->getClientOriginalExtension());
-    $allowedExtensions =['pdf','jpg','png'];
-    if(!in_array( $extension,$allowedExtensions)){
-        return 'not in';
-    }
-    $filenameToStore = $filename.'_'.time().'.'.$extension;
-    //Upload Image
-    $location = $request->file('saakhi')->storeAs('public/Saakhi/',$filenameToStore);
-//dd($request->title);
-
-    // Create Symlink with Artisan as we don't want client to access this location i,e stroage folder
-    //dd($request->date);
-   // $date= Carbon::parse($request->get('datepicker'))->format('Y-m-d H:i:s');
-    $date = Carbon::createFromFormat('d/M/Y', $request->date);
-    //dd($date);
-    $saakhi = new Saakhi;
-    $saakhi->title = $request->title;
-    $saakhi->publisher = $request->publisher;
-    $saakhi->volume = $request->volume;
-    $saakhi->issue = $request->issue;
-    $saakhi->date = $date;
-    $saakhi->saakhi = $filenameToStore;
-    
-
-    $saakhi->save();
-    //Album::create($data);
-    //Personal::create(array_merge( $data ,['user_id'=>Auth::user()->id]));
+         $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+        $extension = strtolower($request->file('saakhi')->getClientOriginalExtension());
+        $allowedExtensions =['pdf','jpg','png'];
+        if(!in_array( $extension,$allowedExtensions)){
+            return 'not in';
+        }
+        $filenameToStore = $filename.'_'.time().'.'.$extension;
+        //Upload Image
+        $location = $request->file('saakhi')->storeAs('public/Saakhi/',$filenameToStore);
+        $date = Carbon::createFromFormat('d/M/Y', $request->date);
+        //dd($date);
+        $saakhi = new Saakhi;
+        $saakhi->title = $request->title;
+        $saakhi->publisher = $request->publisher;
+        $saakhi->volume = $request->volume;
+        $saakhi->issue = $request->issue;
+        $saakhi->date = $date;
+        $saakhi->saakhi = $filenameToStore;
+        $saakhi->save();
     return redirect('/saakhi/')->with('success','New Event  Added');
     	
     }
 
-    public function show(Saakhi $saakhi){
-       // $comment_id = Comment::where('saakhi_id',$saakhi)->get();
-       
+    public function show(Saakhi $saakhi){  
          $comments = Comment::with('user','saakhi','replies')->where('saakhi_id',$saakhi->id)->latest()->paginate(10);
          
        

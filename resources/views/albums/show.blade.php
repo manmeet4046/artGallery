@@ -25,7 +25,7 @@
 </style>
 <div class="container py-4">
 <h3 class="text-center maroon">{{$album->name}}</h3>
-<a class="btn btn-warning btn-sm" href="/albums">{!! __('Go Back')!!}</a>
+<a class="btn btn-warning btn-sm" href="/albums">{{__('Go Back')}}</a>
 @can('isAdmin')<a class="btn btn-primary btn-sm " href="/photos/create/{{$album->id}}">Upload Photo to Album</a> @endcan <hr>
 @if (session('success'))
                         <div class="alert alert-success" role="alert">

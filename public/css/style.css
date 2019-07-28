@@ -513,6 +513,92 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 50%;
   font-weight: 700;
 }
+/* ++++++++++++++++
+Validations 
++++++++++++++++++++*/
+
+  .post-comments {
+  padding-bottom: 9px;
+  margin: 5px 0 5px;
+}
+
+.comments-nav {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.post-comments .comment-meta {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.post-comments .media {
+  border-left: 1px dotted #000;
+  border-bottom: 1px dotted #000;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  width:100%;
+}
+
+.post-comments .media-heading {
+  font-size: 12px;
+  color: grey;
+}
+
+.post-comments .comment-meta a {
+  font-size: 12px;
+  color: grey;
+  font-weight: bolder;
+  margin-right: 5px;
+}
+.reply{
+  border-left: 1px dotted #000;
+  border-bottom: 1px dotted red;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  margin-left:15%;
+  width:100%;
+
+}
+
+#btnLeft:active {
+    dispaly:block;
+}
+
+input:invalid {
+    border-left: solid 5px salmon;
+  border-left-color: salmon;
+}
+input:required:valid {
+  border-left: solid 5px palegreen;
+  border-left-color: palegreen;
+}
+input:required:focus:valid {
+  background: url("{{asset('/img/checked.png')}}") no-repeat 99% 50%;
+  background-size: 5px;
+}
+ input:focus:invalid {
+  /*background: url("{{asset('img/wrong.png')}}") no-repeat 99% 50%;*/
+  background-size: 5px;
+}
+select:required:valid {
+  border-left: solid 5px palegreen;
+  border-left-color: palegreen;
+}
+select:invalid {
+  border-left: solid 5px salmon;
+  border-left-color: salmon;
+}
+ textarea:focus:invalid {
+    background-color: salmon;
+    opacity: .4;
+}
+
+ textarea::valid {
+    background-color: none;
+    opacity: 1;
+}
+
 
 /* ==================================================
   Parallax Styling
