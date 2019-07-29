@@ -60,8 +60,8 @@ Route::get('/events/{event}','EventsController@show')->name('events.show');
 //For SAAKHI
 Route::get('/saakhi','SaakhiController@index')->name('saakhi');
 
-Route::get('/journals','SaakhiController@getJournals')->name('journals')->middleware('verified');;
-Route::get('/saakhi/create','SaakhiController@create')->middleware('verified')->middleware('verified');;
+Route::get('/journals','SaakhiController@getJournals')->name('journals');
+Route::get('/saakhi/create','SaakhiController@create')->middleware('verified');
 Route::post('/saakhi/store','SaakhiController@store')->name('saakhi/store')->middleware('verified');
 Route::get('/saakhi/{saakhi}','SaakhiController@show')->name('saakhi.show');
 Route::post('/saakhi/delete/{saakhi}','SaakhiController@destroy')->name('saakhi.delete')->middleware('verified');
