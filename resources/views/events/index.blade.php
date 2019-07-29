@@ -92,7 +92,7 @@ position: absolute;
 <div class="container">
 	<h3 class="mt-5 maroon "><u>{{($url=='pastevents')?__('Past Events'):(($url=='ongoingevents')?__('Ongoing Events'):__('Upcoming Events'))}}:</u> </h3>
 	
-	<div class="text-right" style="margin-top: -30px;"><a href="/events/create" class="btn-success btn-sm">Add New Event</a></div>
+	@can('isAdmin')<div class="text-right" style="margin-top: -30px;"><a href="/events/create" class="btn-success btn-sm">Add New Event</a></div>@endcan
 	@if (session('success'))
                         <div class="alert alert-danger" role="alert">
                             {{ session('success') }}
@@ -143,7 +143,7 @@ position: absolute;
 	@else
 	<br>
 	<div class="alert alert-danger" role="alert">
-                            {{ 'No Event in Database' }}
+                            {{ 'No Event in Database, Login to Add new event' }}
                         </div><div class="py-5"></div><div class="py-5"></div><div class="py-5"></div>
 	@endif
 

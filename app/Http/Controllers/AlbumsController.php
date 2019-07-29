@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Album;
 use Gate;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Filesystem\Filesystem\Filesystem;
 class AlbumsController extends Controller
 {
     public function index(){
@@ -58,6 +59,19 @@ public function slideshow(Album $album){
    $albumname = $album->name;
     return view('photos.slideshow',compact('album','albumname'));
    }
+ public function destroy(Album $album)
+    {
+        if(!Gate::allows('isAdmin')){
+            abort(403,"Sorry");
+        }
+ 
+        if(Storage::delete(['public/album_covers/'.$album->cover_image])){
+             $album->delete();
+        return redirect('/albums')->with('success','Album deleted successfully.'); 
+        }
+        return redirect('/albums')->with('success','No File Found for deletion.');
+    }
+
     protected function validateData(){
     	return request()->validate([
     		'name'=>'required',

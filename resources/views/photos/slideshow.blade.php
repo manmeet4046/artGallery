@@ -74,8 +74,8 @@ margin-right: auto;
     </ol>
 <div class="carousel-item active " style="background-image: url('/img/no_slider_image.png')">
         <div class="carousel-caption d-none d-md-block">
-          <h3 class="" ><span style="background-color: grey;padding: 5px;border-radius: 10px;">No Image Uploaded</span></h3>
-         
+          <h3 class="" ><span style="background-color: grey;padding: 5px;border-radius: 10px;">No Image Uploaded for Slide Show</span></h3>
+         <a href="{{url()->previous()}}" class="maroon" style="font-size: 18px;background-color: lightyellow;">{{__('Go Back')}}</a>
         </div>
       </div>
   @endif

@@ -41,6 +41,7 @@ Route::get('/albums','AlbumsController@index');
 Route::get('/albums/create','AlbumsController@create')->middleware('verified');
 Route::post('/albums/store','AlbumsController@store')->name('albums/store')->middleware('verified');
 Route::get('/albums/{album}','AlbumsController@show')->name('albums.show');
+Route::post('/albums/delete/{album}','AlbumsController@destroy')->name('albums.delete')->middleware('verified');
 Route::get('/photos/create/{id}','PhotosController@create')->middleware('verified');
 Route::post('/photos/store','PhotosController@store')->name('photos/store')->middleware('verified');
 Route::get('/photos/{photo}','PhotosController@show')->name('photos.show');

@@ -41,7 +41,7 @@ Photos of (<span class="maroon"> {{$album->name}})</span> Album.
 	
 		
 		<a href="{{ route('photos.show',$photo->id) }}">
-				<img  class="thumbnail" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}"><br><div class="details text-center "  >{{$photo->title}}</div></a>
+				<img  class="thumbnail" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" width="500px" height="250px;"><br><div class="details text-center "  >{{$photo->title}}</div></a>
 	
 	
 

@@ -12,14 +12,14 @@ use App\Comment;
 class SaakhiController extends Controller
 {
     
-    public function index(){
+ public function index(){
     
     	return view('saakhi.index');
     }
 
 
 
-    public function getJournals(){
+ public function getJournals(){
         $users=Saakhi::orderBy('date','desc');
 
 return Datatables::of($users)->editColumn('date', function ($user) 
@@ -34,8 +34,6 @@ return Datatables::of($users)->editColumn('date', function ($user)
                         $button = '<a  name="edit" href="/saakhi/'.$data->id.'" class="delete btn-ghost btn-sm">View</a>';
                         return $button;
                     })->rawColumns(['action','issue'])->setRowClass('{{$id % 2==0 ? "alert-success":"alert-warning"}}')->make(true); 
-
-   
 
     }
     public function create(){
@@ -74,8 +72,6 @@ return Datatables::of($users)->editColumn('date', function ($user)
 
     public function show(Saakhi $saakhi){  
          $comments = Comment::with('user','saakhi','replies')->where('saakhi_id',$saakhi->id)->latest()->paginate(10);
-         
-       
     	return view('saakhi.show',compact('saakhi','comments'));
     }
 
@@ -94,6 +90,7 @@ return Datatables::of($users)->editColumn('date', function ($user)
                 $saakhi->delete();
         return redirect('/saakhi')->with('success','Journal/Book deleted successfully.');
     }
+
     public function validateData(){
     	return request()->validate([
             'title'=>'required',
