@@ -21,27 +21,27 @@
           <div class="col-lg-6 col-xs-12 text-lg-right text-center">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="index.html">Home</a>
+                <a href="/#about">{!! __('About Us')!!}</a>
               </li>
 
               <li class="list-inline-item">
-                <a href="#about">About Us</a>
+                <a href="/#features">{!!__('History')!!}</a>
               </li>
 
               <li class="list-inline-item">
-                <a href="#features">Features</a>
+                <a href="/saakhi">{!! __('Saakhi')!!}</a>
               </li>
 
               <li class="list-inline-item">
-                <a href="#portfolio">Portfolio</a>
+                <a href="/albums">{!! __('Gallery')!!}</a>
               </li>
 
               <li class="list-inline-item">
-                <a href="#team">Team</a>
+                <a href="/events/ongoingevents">{!! __('Events')!!}</a>
               </li>
 
               <li class="list-inline-item">
-                <a href="#contact">Contact</a>
+                <a href="#contact">{{__('Contact Us')}}</a>
               </li>
             </ul>
           </div>

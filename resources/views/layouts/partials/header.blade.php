@@ -16,7 +16,7 @@
           <li><a href="/#features" style="font-size:16px;">{!!__('History')!!}</a></li>
           <li><a href="/saakhi" style="font-size:16px;"> {!! __('Saakhi')!!} </a></li>
           <li><a href="/albums" style="font-size:16px;">{!! __('Gallery')!!}</a></li>
-          <li class=""><a href="" style="font-size:16px;">{!! __('Events')!!}</a>
+          <li class=""><a href="" style="font-size:16px;">{{ __('Events')}}</a>
             <ul style="margin-top: -10px;">
 
                <li><a href="/events/ongoingevents">{{__('Ongoing Events')}}</a></li>
@@ -27,7 +27,7 @@
             </ul>
           </li>
            
-          <li><a href="#contact" style="font-size:16px;">{!!__('Contact Us')!!}</a></li>
+          <li><a href="#contact" style="font-size:16px;">{{__('Contact Us')}}</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
